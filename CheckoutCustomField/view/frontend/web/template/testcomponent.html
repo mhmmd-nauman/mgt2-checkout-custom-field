@@ -1,0 +1,41 @@
+<div class="test-wrapper" data-block="test" data-bind="visible: isActive()">
+    <p>Enter Data of Birth</p>
+    <input type="text" data-bind="textInput:totala">
+    <div class="field ">
+    <label class="field-label">
+        <span><?php echo __(' Date Picker')?></span>
+    </label>
+    <div class="field-control ">
+        <input class="control-text" name="datepicker" id="datepicker" type="text">
+    </div>
+    </div>
+    <div class="data_area customer-dob">
+        <div class="dob-month">
+                     <input type="text" id="billing:month" name="billing[month]" value="" title="Month" placeholder="Month" class="t1 validate-custom">
+                     <label for="billing:month">MM</label>
+                 </div><div class="dob-day">
+                     <input type="text" id="billing:day" name="billing[day]" value="" title="Day" placeholder="Day" class="t1 validate-custom">
+                     <label for="billing:day">DD</label>
+                 </div><div class="dob-year">
+                     <input type="text" id="billing:year" name="billing[year]" value="" title="Year" placeholder="Year" class="t1 validate-custom" autocomplete="off">
+                     <label for="billing:year">YYYY</label>
+                 </div>    <div class="dob-full" style="display:none;">
+                <input type="hidden" id="billing:dob" name="billing[dob]" value="">
+            </div>
+    </div>
+</div>
+<script type="text/javascript">
+ 
+require([
+ 
+"jquery",
+ 
+"mage/calendar"
+ 
+], function($){
+ 
+        $('#datepicker').datepicker( );
+ 
+});
+ 
+</script>

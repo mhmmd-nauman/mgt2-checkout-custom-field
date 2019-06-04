@@ -6,6 +6,11 @@
                         <item name="components" xsi:type="array">
                             <item name="checkout" xsi:type="array">
                                 <item name="children" xsi:type="array">
+								    <item name="testchild" xsi:type="array">
+										<item name="sortOrder" xsi:type="string">2</item>
+										<item name="component" xsi:type="string">Nauman1_CheckoutCustomField/js/view/testcomponent</item>
+										<item name="displayArea" xsi:type="string">authentication</item>
+									</item>
                                     <item name="steps" xsi:type="array">
                                         <item name="children" xsi:type="array">
                                             <!-- The new step you add -->
