@@ -1,15 +1,11 @@
-<div class="test-wrapper" data-block="test" data-bind="visible: isActive()">
-    <p>Enter Data of Birth</p>
-    <input type="text" data-bind="textInput:totala">
-    <div class="field ">
-    <label class="field-label">
-        <span><?php echo __(' Date Picker')?></span>
-    </label>
-    <div class="field-control ">
-        <input class="control-text" name="datepicker" id="datepicker" type="text">
-    </div>
-    </div>
-    <div class="data_area customer-dob row">
+<div>
+    <form id="custom-checkout-form" class="form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+        <fieldset class="fieldset">
+            <legend data-bind="i18n: 'Custom Checkout Form'"></legend>
+            <!-- ko foreach: getRegion('custom-checkout-form-fields') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+            <div class="data_area customer-dob row">
             <div class="dob-month col-md-2">
                 <input type="text" id="dob_month" name="dob_month" value="" title="Month" placeholder="Month" class="t1 validate-custom" required="">
                          <label for="billing:month">MM</label>
@@ -24,19 +20,13 @@
                          <label for="billing:year">YYYY</label>
                </div>    
         </div>
+        </fieldset>
+        
+        <button type="reset">
+            <span data-bind="i18n: 'Reset'"></span>
+        </button>
+        <button type="button" data-bind="click: onSubmit" class="action">
+            <span data-bind="i18n: 'Submit'"></span>
+        </button>
+    </form>
 </div>
-<script type="text/javascript">
- 
-require([
- 
-"jquery",
- 
-"mage/calendar"
- 
-], function($){
- 
-        $('#datepicker').datepicker( );
- 
-});
- 
-</script>
