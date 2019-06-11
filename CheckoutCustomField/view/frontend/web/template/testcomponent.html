@@ -11,32 +11,22 @@
     </div>
     <div class="data_area customer-dob row">
             <div class="dob-month col-md-2">
-                <input type="text" id="dob_month" name="dob_month" value="" title="Month" placeholder="Month" class="t1 validate-custom" required="">
+                <input data-bind="value: dob_month" type="text" id="dob_month" name="dob_month" value="" title="Month" class="t1 validate-custom" required>
                          <label for="billing:month">MM</label>
                      </div>
                 
             <div class="dob-day col-md-2">
-                         <input type="text" id="billing:day" name="billing[day]" value="" title="Day" placeholder="Day" class="t1 validate-custom">
+                         <input data-bind="value: dob_day" type="text" id="dob_day" name="dob_day" value="" title="Day" placeholder="Day" class="t1 required>
                          <label for="billing:day">DD</label>
                      </div>
                 <div class="dob-year col-md-2">
-                         <input type="text" id="billing:year" name="billing[year]" value="" title="Year" placeholder="Year" class="t1 validate-custom" autocomplete="off">
+                         <input data-bind="value: dob_year" type="text" id="dob_year" name="dob_year" value="" title="Year" placeholder="Year" class="t1 validate-custom" required>
                          <label for="billing:year">YYYY</label>
                </div>    
         </div>
+    <div class="row">
+        <button type="button" data-bind="click: onSubmit1" class="action" value="Submit Data">
+            Submit Data
+        </button>
+    </div>
 </div>
-<script type="text/javascript">
- 
-require([
- 
-"jquery",
- 
-"mage/calendar"
- 
-], function($){
- 
-        $('#datepicker').datepicker( );
- 
-});
- 
-</script>
