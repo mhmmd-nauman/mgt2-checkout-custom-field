@@ -26,6 +26,8 @@ define([
         },
         onSubmit1: function() {
            // alert(this.dob_month());
+           
+           return true;
            alert($("#dob_month").val());
            var zipcode= encodeURIComponent("93306");
            var firstname= encodeURIComponent("Lucy");
@@ -46,11 +48,30 @@ define([
                     url: url,
                     data: param,
                     type: "POST",
+                    dataType: 'JSONP',
                     headers: {  'Content-type': 'application/x-www-form-urlencoded',
                                 'Content-Length': count,
                                 'Access-Control-Allow-Origin':'*'
                              }
                 }).done(function (data) {
+                    // tid=U5268F6318C73A4C8612&mc=1&mc_desc=zip;last;first_i;yyyy&err_code=0&err_desc=
+                    var err_code = 0
+                    var mc = 0;
+                    var err_desc = "";
+                    var ageVerificationFlag = 1;
+                    var message = "";
+                    if(err_code === 0){            
+                        if(mc !== 0){               
+                                //echo "response=verified";            
+                        }else{ 
+                                ageVerificationFlag = 0;              
+                                message = 'We were not able to verify the identity attributes you submitted. Please verify that the identity attributes you provided are correct. If your legal first name is William, make sure to submit William instead of Bill. If you have moved recently, please try with your previous address or if you have recently married, please try with your maiden name.';         
+                        }         
+                    }else{  
+                                ageVerificationFlag = 0; 
+                                message = err_desc;                
+                        }    
+                    } 
                     console.log(data);
             });
            
