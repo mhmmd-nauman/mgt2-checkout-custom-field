@@ -2,7 +2,8 @@ define([
     'uiElement',
     'ko',
     'jquery',
-], function (Component,ko,$) {
+    'Magento_Checkout/js/model/quote',
+], function (Component,ko,$,quote) {
     'use strict';
 
     var checkoutConfig = window.checkoutConfig;
@@ -26,7 +27,8 @@ define([
         },
         onSubmit1: function() {
            // alert(this.dob_month());
-           
+           var shippingAddress = quote.shippingAddress();
+           console.log(shippingAddress);
            return true;
            alert($("#dob_month").val());
            var zipcode= encodeURIComponent("93306");
@@ -71,7 +73,7 @@ define([
                                 ageVerificationFlag = 0; 
                                 message = err_desc;                
                         }    
-                    } 
+                    
                     console.log(data);
             });
            
