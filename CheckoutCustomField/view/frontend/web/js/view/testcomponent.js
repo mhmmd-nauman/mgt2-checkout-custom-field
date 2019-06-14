@@ -2,8 +2,8 @@ define([
     'uiElement',
     'ko',
     'jquery',
-    'Magento_Checkout/js/model/quote',
-], function (Component,ko,$,quote) {
+    'Magento_Checkout/js/model/quote',//
+], function (Component,ko,$, quote) {
     'use strict';
 
     var checkoutConfig = window.checkoutConfig;
